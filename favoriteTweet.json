@@ -1,0 +1,24 @@
+{
+  "resource": "/tweet",
+  "path": "/tweet",
+  "httpMethod": "POST",
+  "body": {
+    "for_user_id": "2244994945",
+    "favorite_events": [
+      {
+        "id": "a7ba59eab0bfcba386f7acedac279542",
+        "created_at": "Mon Mar 26 16:33:26 +0000 2018",
+        "timestamp_ms": 1522082006140,
+        "favorited_status": {
+          "created_at": "Thu Apr 06 15:24:15 +0000 2017",
+          "id": 850006245121695744,
+          "id_str": "850006245121695744",
+          "text": "1/ Today we’re sharing our vision for the future of the Twitter API platform!nhttps://t.co/XweGngmxlP",
+          "user": {},
+          "entities": {}
+        },
+        "user": {}
+      }
+    ]
+  }
+}

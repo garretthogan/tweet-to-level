@@ -1,0 +1,15 @@
+{
+  "name": "tweet-to-level-lambda",
+  "version": "1.0.0",
+  "description": "A lambda for using emoji replies on twitter as a template for creating game worlds.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mathjs": "^5.4.1",
+    "node-emoji": "^1.8.1"
+  }
+}

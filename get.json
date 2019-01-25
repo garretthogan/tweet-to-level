@@ -1,0 +1,6 @@
+{
+  "resource": "/tweet",
+  "path": "/tweet",
+  "httpMethod": "GET",
+  "queryStringParameters": { "crc_token": "foo" }
+}
