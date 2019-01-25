@@ -21,8 +21,6 @@ const createEmojiWorld = emojiCount => {
 
 /**
  *
- * TODO: Figure out how to properly map from flat array to matrix:
- *
  * [0, 0, 0, 0]
  * [0, 0, 0, 0]
  * [0, 0, 0, 0]
