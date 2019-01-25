@@ -43,11 +43,11 @@ const createEmojiWorld = emojiCount => {
  *
  * if currentRowIndex = 1 and currentColumnIndex = 1, that should correspond to flatArray[5]
  * (4 x (1 + 1)) - 1 = 7 this gives us the last element of that row
- * then just subtract the currentColumnIndex + 1 and you get 5.
+ * then just subtract the  remainder of (currentColumnIndex + 1) - numColumns and you get 5.
  *
- * if currentRowIndex = 2 and currentColumnIndex = 2, that should correspond to flatArray[11]
+ * if currentRowIndex = 2 and currentColumnIndex = 2, that should correspond to flatArray[10]
  * (4 x (2 + 1)) - 1 = 11 here we get the last item of the row
- *
+ * 11 - ((2 + 1) - numColums) = 10
  */
 
 const mapToMatrix = (tweet = createEmojiWorld(140)) => {
@@ -60,12 +60,14 @@ const mapToMatrix = (tweet = createEmojiWorld(140)) => {
   const rows = Math.floor(emojis.length / MAX_ROWS);
   const mat = math.zeros(rows, MAX_COLUMNS);
   mat.map((a, b, c) => {
-    const x = b[1];
-    const y = b[0];
-    mat.subset(math.index(y, x), {
-      asset: emoji.unemojify(emojis[x * y]).split(':')[1],
-      x,
-      y
+    const rowIndex = b[0];
+    const colIndex = b[1];
+
+    const flatIndex = rows * (rowIndex + 1) - 1 - (colIndex + 1 - MAX_COLUMNS);
+    mat.subset(math.index(rowIndex, colIndex), {
+      asset: emoji.unemojify(emojis[flatIndex]).split(':')[1],
+      x: colIndex,
+      y: rowIndex
     });
   });
 
