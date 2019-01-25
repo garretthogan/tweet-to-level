@@ -13,10 +13,10 @@ module.exports.tweet = async (event, context) => {
       .update(crc_token)
       .digest('base64');
 
-    const body = JSON.stringify({ response_token: `sha256=${response}` });
+    const res = JSON.stringify({ response_token: `sha256=${response}` });
     return {
       statusCode: 200,
-      body
+      body: res
     };
   } else if (body.tweet_create_events && body.tweet_create_events.length > 0) {
     const tweet = body.tweet_create_events[0];
