@@ -63,7 +63,7 @@ const mapToMatrix = (tweet = createEmojiWorld(140)) => {
     const rowIndex = b[0];
     const colIndex = b[1];
 
-    const flatIndex = rows * (rowIndex + 1) - 1 - (colIndex + 1 - MAX_COLUMNS);
+    const flatIndex = rows * (rowIndex + 1) - 1 - (MAX_COLUMNS - colIndex + 1);
     mat.subset(math.index(rowIndex, colIndex), {
       asset: emoji.unemojify(emojis[flatIndex]).split(':')[1],
       x: colIndex,
